@@ -40,7 +40,7 @@ ListStore = {
   },
   toggleCompleteness: function(itemId) {
     var item = findItemById(itemId);
-    var currentCompletedValue = item.comleted;
+    var currentCompletedValue = item.completed;
 
     var updateRequest = $.ajax({
       type: 'PUT',
@@ -50,6 +50,22 @@ ListStore = {
 
     updateRequest.done(function(itemData) {
       item.completed = itemData.completed;
+      notifyComponents();
+    });
+  },
+  deleteItem: function(itemId) {
+    var deleteRequest = $.ajax({
+      type: 'POST',
+      url: 'http://listalous.herokuapp.com/lists/mhuerster/items/' + itemId,
+      data: { '_method': 'delete'}
+    });
+
+    deleteRequest.done(function(itemData) {
+      for(i=0;i<items.length;i++){
+        if (items[i].id === itemId) {
+          items.splice(i,1);
+        }
+      }
       notifyComponents();
     });
   }
