@@ -1,12 +1,12 @@
 body {
-  background: url('BackgroundPhoto.jpg');
+  background: url('BackgroundPhoto.jpg'); 
   background-size: cover;
 }
 
 #container {
   width: 600px;
-  font-family: 'Titillium Web', 'Arial', sans-serif;
-  font-size: 40px;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 36px;
   text-align: center;
   margin: 40px auto;
 }
@@ -26,6 +26,7 @@ h1 {
 form {
   margin: 0;
   padding: 0;
+  font-family: 'Raleway', sans-serif;
 }
 
 #create {
@@ -78,7 +79,7 @@ form {
   border-right:   1px  solid #7d82b0;
   border-bottom:  2px  solid #7d82b0;
   border-top:     0px  solid #7d82b0;
-
+  font-family: 'Rochester', serif;
 }
 
 .item .complete-button {

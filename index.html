@@ -1,6 +1,8 @@
 <head>
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:600' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Rochester' rel='stylesheet' type='text/css'>
   <title>Molly's To Do List</title>
   <meta name="description" content="This is a to-do app I created in React.js based on a tutorial. I'm looking forward to working on more React projects soon!">
   <script src="vendor/console-polyfill.js"></script>
@@ -26,7 +28,7 @@
       render: function() {
         return (
           <form id="add-form" onSubmit={this.handleSubmit}>
-            <input id='create' ref="description" type='text' placeholder='Add Something to the list!' />
+            <input id='create' ref="description" type='text' placeholder='add something to the list...' />
           </form>
         )
       },
