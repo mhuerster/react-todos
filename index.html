@@ -48,7 +48,9 @@
           </li>
         )
       },
-      handleComplete: function() {}
+      handleComplete: function() {
+        ListStore.toggleCompleteness(this.props.id);
+      }
     })
 
     var List = React.createClass({
