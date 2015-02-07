@@ -1,5 +1,6 @@
 body {
-  background: url('debut_light.png')
+  background: url('BackgroundPhoto.jpg');
+  background-size: cover;
 }
 
 #container {
