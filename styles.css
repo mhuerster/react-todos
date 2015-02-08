@@ -9,6 +9,7 @@ body {
   font-size: 36px;
   text-align: center;
   margin: 40px auto;
+  overflow: scroll;
 }
 
 h1 {
@@ -97,6 +98,13 @@ form {
 .item .delete-button {
   position: absolute;
   right: 20px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.item .edit-button {
+  position: absolute;
+  right: 60px;
   top: 10px;
   cursor: pointer;
 }

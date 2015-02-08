@@ -53,6 +53,18 @@ ListStore = {
       notifyComponents();
     });
   },
+  editItem: function(itemId, description) {
+    var item = findItemById(itemId);
+    var editRequest = $.ajax({
+      type: 'PUT',
+      url: 'http://listalous.herokuapp.com/lists/mhuerster/items/' + itemId,
+      data: { description: description }
+    });
+    editRequest.done(function(itemData){
+      item.description = itemData.description;
+      notifyComponents();
+    })
+  },
   deleteItem: function(itemId) {
     var deleteRequest = $.ajax({
       type: 'POST',
@@ -60,7 +72,7 @@ ListStore = {
       data: { '_method': 'delete'}
     });
 
-    deleteRequest.done(function(itemData) {
+    deleteRequest.done(function() {
       for(i=0;i<items.length;i++){
         if (items[i].id === itemId) {
           items.splice(i,1);

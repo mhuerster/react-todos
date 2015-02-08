@@ -47,13 +47,18 @@
         return (
           <li className={itemClass}>
             <span className='complete-button' onClick={this.handleComplete}>{'\u2714'}</span>
-            <div className='description'>{this.props.description}</div>
+            <div className='description' ref='description' contentEditable='true'>{this.props.description}</div>
+            <span className='edit-button' onClick={this.handleEdit}>{'\u2710'}</span>
             <span className='delete-button' onClick={this.handleDelete}>{'\u2718'}</span>
           </li>
         )
       },
       handleComplete: function() {
         ListStore.toggleCompleteness(this.props.id);
+      },
+      handleEdit: function() {
+        var description = this.getDOMNode().childNodes[1].innerHTML;
+        ListStore.editItem(this.props.id, description);
       },
       handleDelete: function() {
         ListStore.deleteItem(this.props.id);
